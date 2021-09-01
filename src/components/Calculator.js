@@ -5,6 +5,8 @@ import {CalcButton} from './calcButtons';
 
 function Calculator(props){
 	const [curValue, setCurValue] = useState('');
+	const [prevValue, setPrevValue] = useState('');
+	const [operator, setOperator] = useState('');
 
 	const appendValue = (e) =>{
 		e.preventDefault();
@@ -14,15 +16,30 @@ function Calculator(props){
 		setCurValue(curValue + value)
 	}
 
+	const delValue = (e) =>{
+		e.preventDefault();
+		if(curValue !=''){
+			let tempVal = curValue;
+			tempVal = tempVal.substring(0,tempVal.length-1);
+			setCurValue(tempVal);
+		}
+	}
+
+	const allClear = (e) =>{
+		e.preventDefault();
+		setCurValue('');
+		setPrevValue('');
+	}
+
 	return (
 		<div>
 			<CalcContainer>
 				<CalcScreen>
-					<PrevScreen>123+234+3</PrevScreen>
+					<PrevScreen>{prevValue}{operator}</PrevScreen>
 					<CurScreen>{curValue}</CurScreen>
 				</CalcScreen>
-				<CalcButton gridSize buttonColor="light">AC</CalcButton>
-				<CalcButton buttonColor="light">DEL</CalcButton>
+				<CalcButton onClick = {allClear} gridSize buttonColor="light">AC</CalcButton>
+				<CalcButton onClick = {delValue} buttonColor="light">DEL</CalcButton>
 				<CalcButton buttonColor="op">%</CalcButton>
 				<CalcButton data-val={'7'} onClick={appendValue}>7</CalcButton>
 				<CalcButton data-val={'8'} onClick={appendValue}>8</CalcButton>
