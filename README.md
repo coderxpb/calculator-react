@@ -1,1 +1,1 @@
-A beautiful calculator made using ReactJS, React Styled Componenets and SCSS.
+A beautiful calculator made using ReactJS, React Styled Components and SCSS.
