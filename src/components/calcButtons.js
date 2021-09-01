@@ -14,7 +14,7 @@ export const CalcButton = styled.button`
 			return ("rgba(110,70,180,0.6)");
 		}
 		else if(props.buttonColor === "light"){
-			return ("rgba(230, 80, 150, 0.80)");
+			return ("rgba(200, 80, 150, 0.70)");
 		}
 		else{
 			return ("rgba(100,100,255,0.35)");
