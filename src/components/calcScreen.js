@@ -14,7 +14,7 @@ export const CalcScreen = styled.div`
 	word-break: break-all;
 	text-align: right;
 	
-	background: rgba(120, 147, 255, 0.7);
+	background: rgba(100, 127, 255, 0.7);
 
 `
 
